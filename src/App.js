@@ -21,7 +21,7 @@ function App() {
   }, []);
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <h1>Loading...</h1>
       ) : (
         <div>
@@ -30,11 +30,10 @@ function App() {
               <h2>{movie.title}</h2>
               <p>{movie.summary}</p>
             </div>
-
           ))}
         </div>
-      )} */}
-      <Test/>
+      )}
+      <Test />
     </>
   );
 }
