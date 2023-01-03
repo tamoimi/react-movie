@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Nav from "../components/Nav";
+import styles from "./Detail.module.css";
 
 const Detail = () => {
   const [loading, setLoading] = useState(true);
@@ -19,16 +20,23 @@ const Detail = () => {
   }, []);
   return (
     <>
-      <Nav/>
+      <Nav />
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loader}></div>
       ) : (
-        <>
-          <img src={movies.medium_cover_image} alt="cover_img" />
-          <h1>{movies.title}</h1>
-          <p>{movies.description_full}</p>
-          <p>{movies.rating}</p>
-        </>
+        <div>
+          <img
+            src={movies.background_image}
+            className={styles.background}
+            alt="background_img"
+          />
+          <div className={styles.box}>
+            <img src={movies.medium_cover_image} alt="cover_img" />
+            <h1>{movies.title}</h1>
+            <p>{movies.description_full}</p>
+            <p>{movies.rating}</p>
+          </div>
+        </div>
       )}
     </>
   );
